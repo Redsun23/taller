@@ -89,7 +89,7 @@ class DAO():
             """except Error as ex:
                 print("Error al intentar la conexión: {0}".format(ex))"""
             
-    def listarArea(self):
+    def listararea(self):
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
@@ -120,5 +120,26 @@ class DAO():
                 return resultados
             except Error as ex:
                 print("Error al intentar la conexión: {0}".format(ex))
+    def listarCargo(self,cargo):
+        if self.conexion.is_connected():
+            try:
+                cursor = self.conexion.cursor()
+                sql = 'SELECT * FROM trabajador WHERE cargo = %s'
+                cursor.execute(sql, (cargo,))
+                resultados = cursor.fetchall()
+                return resultados
+            except Error as ex:
+                print("Error al intentar la conexión: {0}".format(ex))
+    def listarArea(self,area):
+        if self.conexion.is_connected():
+            try:
+                cursor = self.conexion.cursor()
+                sql = 'SELECT * FROM trabajador WHERE id_area= %s'
+                cursor.execute(sql, (area,))
+                resultados = cursor.fetchall()
+                return resultados
+            except Error as ex:
+                print("Error al intentar la conexión: {0}".format(ex))
+
 
 

@@ -25,7 +25,7 @@ def listar_por_sexo():
 
 def listar_por_cargo():
     cargo = input("Ingrese el cargo para filtrar: ")
-    trabajadores = dao.listarcargo(cargo)
+    trabajadores = dao.listarCargo(cargo)
     if len(trabajadores) > 0:
         for trabajador in trabajadores:
             print("Rut: {0} | Nombre: {1} | Sexo: {2} | Cargo: {3}".format(
@@ -35,10 +35,12 @@ def listar_por_cargo():
         print("No se encontraron trabajadores con el cargo especificado.")
 
 def listar_por_area():
+    print("Para Filtrar por area ingrese el digito del area")
+    print(dao.listararea())
     area = input("Ingrese el área para filtrar: ")
-    trabajadores = dao.listararea(area)
-    if len(trabajadores) > 0:
-        for trabajador in trabajadores:
+    trabajador = dao.listarArea(area)
+    if len(trabajador) > 0:
+        for trabajador in trabajador:
             print("Rut: {0} | Nombre: {1} | Sexo: {2} | Cargo: {3}".format(
                 trabajador[0], trabajador[1], trabajador[2], trabajador[3]
             ))

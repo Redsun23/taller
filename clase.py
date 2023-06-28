@@ -24,10 +24,9 @@ class Trabajador(Empresa):
 
 class Musica():
     trabajador= []
-    def listarTrabajador(self, sexo=None):
+    def listarTrabajador(self):
         print("\nTrabajadores:\n")
         for trabajador in self.trabajador:
-            if sexo is None or trabajador.sexo == sexo:
                 datos = "Rut: {0} | Nombre Completo: {1} | Sexo: {2} | Cargo: {3}"
                 print(datos.format(trabajador.rut, trabajador.nombre_completo, trabajador.sexo, trabajador.cargo))
                 print(" ")
