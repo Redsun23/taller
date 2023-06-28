@@ -61,7 +61,7 @@ class Musica():
             cargo = input("Ingrese cargo: ")
             fecha_ingreso = input("Ingrese fecha ingreso:")
             print("---Para ingresar el area digite el Numero.---")
-            area = dao.listarArea()
+            area = dao.listararea()
             for i in range(len(area)):
                 print(area[i])
                 continue
