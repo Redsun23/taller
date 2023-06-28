@@ -108,3 +108,17 @@ class DAO():
                     return resultados
                 except Error as ex:
                     print("Error al intentar la conexión: {0}".format(ex))
+
+
+    def listarsexo(self, sexo):
+        if self.conexion.is_connected():
+            try:
+                cursor = self.conexion.cursor()
+                sql = 'SELECT * FROM trabajador WHERE sexo = %s'
+                cursor.execute(sql, (sexo,))
+                resultados = cursor.fetchall()
+                return resultados
+            except Error as ex:
+                print("Error al intentar la conexión: {0}".format(ex))
+
+

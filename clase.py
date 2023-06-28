@@ -24,13 +24,13 @@ class Trabajador(Empresa):
 
 class Musica():
     trabajador= []
-    def listarTrabajador(self):
-        print("\nTrabajador: \n")
-        for con in self.trabajador:
-            datos = "Rut {0}| Nombre Completo: {1}| Sexo: {2} | Cargo: {3}"
-            print(datos.format(con.rut, con.nombre_completo, con.sexo, con.cargo))
-            print(" ")  
-
+    def listarTrabajador(self, sexo=None):
+        print("\nTrabajadores:\n")
+        for trabajador in self.trabajador:
+            if sexo is None or trabajador.sexo == sexo:
+                datos = "Rut: {0} | Nombre Completo: {1} | Sexo: {2} | Cargo: {3}"
+                print(datos.format(trabajador.rut, trabajador.nombre_completo, trabajador.sexo, trabajador.cargo))
+                print(" ")
     def rutExiste(self,rut):
         existerut = False
         c=0
